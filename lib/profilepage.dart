@@ -55,7 +55,7 @@ class ProfilePage extends StatelessWidget {
                             color: Colors.indigo,
                             image: DecorationImage(
                                 image: NetworkImage(
-                                    "https://instagram.fadb3-2.fna.fbcdn.net/v/t51.2885-19/s320x320/35616915_255023318595189_8651342522569719808_n.jpg?tp=1&_nc_ht=instagram.fadb3-2.fna.fbcdn.net&_nc_ohc=Vjcx7w36ROoAX-nmkRi&edm=ABfd0MgBAAAA&ccb=7-4&oh=407275d487ae57dd90fe861b7cf7d07c&oe=60AD8231&_nc_sid=7bff83"))),
+                                    "https://i.pinimg.com/736x/91/08/af/9108af9efeca78a21fc275fe4f23bf42.jpg"))),
                       ),
                       Text(
                         "Tunahan yılmaz",
@@ -126,7 +126,7 @@ class ProfilePage extends StatelessWidget {
           ShowPost(
             "Tunahan Yılmaz",
             "3 saat önce",
-            "https://instagram.fadb3-2.fna.fbcdn.net/v/t51.2885-19/s320x320/35616915_255023318595189_8651342522569719808_n.jpg?tp=1&_nc_ht=instagram.fadb3-2.fna.fbcdn.net&_nc_ohc=Vjcx7w36ROoAX-nmkRi&edm=ABfd0MgBAAAA&ccb=7-4&oh=407275d487ae57dd90fe861b7cf7d07c&oe=60AD8231&_nc_sid=7bff83",
+            "https://i.pinimg.com/736x/91/08/af/9108af9efeca78a21fc275fe4f23bf42.jpg",
             "Avengers: Age of Ultron filmiyle de başka bir şekilde ölüme meydan okuyor Tony. Hulk’tan yakın mesafeden yediği inanılmaz kuvvetli yumruklara dayanarak yapıyor bunu. Infinity War’da üzerine bir ay parçalayıp fırlatıyor Thanos ama o yine aldırış etmiyor. Ayrıca Civil War’da ona nerdeyse iç kanama geçirtmesi gereken Captain America kalkanının darbelerini göğsüne yese de bana mısın demiyor “Demir Adam”. Son olarak da onu bu denli zeki yapan şeyin de az miktarda Super Soldier Serum olabileceğini söylüyorlar.",
           )
         ],
