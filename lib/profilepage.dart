@@ -23,11 +23,10 @@ class ProfilePage extends StatelessWidget {
               iconSize: 32.0,
               onPressed: () {
                 Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) =>
-                    ProfileEditingPage()));
-      
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            ProfileEditingPage()));
               })
         ],
       ),
@@ -92,28 +91,23 @@ class ProfilePage extends StatelessWidget {
                     SizedBox(
                       height: 20.0,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18.0),
-                          color: Colors.blue,
-                          border: Border.all(width: 2.0, color: Colors.white)),
-                      height: 40.0,
-                      width: 150.0,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(
-                            Icons.add_circle,
-                            size: 25.0,
-                            color: Colors.white,
-                          ),
-                          Text("Takip Et",
-                              style: TextStyle(
-                                  fontSize: 23.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white)),
-                        ],
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        primary: Colors.white,
+                        backgroundColor: Colors.blue,
+                        onSurface: Colors.grey,
+                        minimumSize: Size(200.0, 50.0),
+                        textStyle: TextStyle(
+                          fontSize: 20
+                        )
                       ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfileEditingPage()));
+                      },
+                      child: Text("Profili Düzenle"),
                     )
                   ],
                 )
