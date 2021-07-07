@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vizeodevi/homepage.dart';
 import 'package:vizeodevi/loginpage.dart';
 import 'package:vizeodevi/profilepage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(MyApp());
