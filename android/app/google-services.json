@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "557082550647",
+    "project_id": "movieteo-803f5",
+    "storage_bucket": "movieteo-803f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557082550647:android:c24f4661f7dfc125d68172",
+        "android_client_info": {
+          "package_name": "com.example.vizeodevi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557082550647-58hhc13pm4q3j4v4vh710ra758a9k4oi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLrOCWz5FUkqJkObV4_wM6DoA67SHJMk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557082550647-58hhc13pm4q3j4v4vh710ra758a9k4oi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

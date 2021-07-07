@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vizeodevi/homepage.dart';
 import 'package:vizeodevi/loginpage.dart';
 import 'package:vizeodevi/profilepage.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProfilePage(),
+      home: Loginpage(),
     );
   }
 }
