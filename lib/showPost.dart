@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:vizeodevi/commentpage.dart';
 
-class ShowPost extends StatelessWidget {
+class ShowPost extends StatefulWidget {
   String isim, zaman, profilresmi, gonderi;
+
   ShowPost(
       String yeniIsim, String yeniZaman, String yeniResim, String yeniGonderi) {
     this.isim = yeniIsim;
@@ -10,6 +11,36 @@ class ShowPost extends StatelessWidget {
     this.profilresmi = yeniResim;
     this.gonderi = yeniGonderi;
   }
+
+  @override
+  _ShowPostState createState() => _ShowPostState();
+}
+class SimpleDialog extends StatelessWidget {
+  final title;
+  SimpleDialog(this.title);
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('Alert'),
+      content: Text(title),
+      actions: <Widget>[
+        // usually buttons at the bottom of the dialog
+        new FlatButton(
+          child: new Text("Close"),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class _ShowPostState extends State<ShowPost> {
+  String remk;
+
+  get onPressed => null;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,7 +64,7 @@ class ShowPost extends StatelessWidget {
                               color: Colors.indigo,
                               borderRadius: BorderRadius.circular(40.0),
                               image: DecorationImage(
-                                  image: NetworkImage(profilresmi),
+                                  image: NetworkImage(widget.profilresmi),
                                   fit: BoxFit.cover)),
                         ),
                         SizedBox(
@@ -44,11 +75,11 @@ class ShowPost extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              isim,
+                              widget.isim,
                               style: TextStyle(
                                   fontSize: 15.0, fontWeight: FontWeight.bold),
                             ),
-                            Text(zaman,
+                            Text(widget.zaman,
                                 style: TextStyle(
                                     fontSize: 10.0,
                                     fontWeight: FontWeight.bold))
@@ -56,29 +87,46 @@ class ShowPost extends StatelessWidget {
                         )
                       ],
                     ),
-                    Icon(Icons.more_vert)
+                    IconButton(icon: Icon(Icons.more_vert), onPressed: () {
+                      
+                    })
                   ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
+                child: GestureDetector(
+                  onLongPress: (){
+                    showDialog(context: context, builder: (BuildContext context){
+                        return SimpleDialog("Bu Post üzerinde Düzenleme Yapmaya Yetkiniz Yok");
+                      });
+                  },
+                  onDoubleTap: (){
+                    setState(() {
+                          remk = 'degistir';
+                        });
+                  },
+                  child: Container(
                   child: Text(
-                    gonderi,
+                    widget.gonderi,
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
-                ),
+                ),)
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   FlatButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          remk = '';
+                        });
+                      },
                       icon: Icon(
                         Icons.favorite,
-                        color: Colors.grey,
+                        color: remk=='degistir'?Colors.red:Colors.grey,
                       ),
                       label: Text(
                         "Beğen",
