@@ -31,19 +31,22 @@ class MovieInfoPage extends StatelessWidget {
         children: [
           Column(
             children: [
-              Container(
-                height: 400.0,
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(0.0, 7.0),
-                          blurRadius: 7.0),
-                    ],
-                    color: Colors.green,
-                    image: DecorationImage(
-                        image: NetworkImage(link),
-                        fit: BoxFit.cover)),
+              Hero(
+                tag: name,
+                child: Container(
+                  height: 400.0,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 7.0),
+                            blurRadius: 7.0),
+                      ],
+                      color: Colors.green,
+                      image: DecorationImage(
+                          image: NetworkImage(link),
+                          fit: BoxFit.cover)),
+                ),
               ),
               SizedBox(
                 height: 5.0,

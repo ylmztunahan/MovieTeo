@@ -136,15 +136,18 @@ Material addmovie(
         padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
         child: Column(
           children: <Widget>[
-            Container(
-              width: 70.0,
-              height: 70.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(width: 2.0, color: Colors.grey),
-                  borderRadius: BorderRadius.circular(35.0),
-                  image: DecorationImage(
-                      image: NetworkImage(link), fit: BoxFit.cover)),
+            Hero(
+              tag: name,
+              child: Container(
+                width: 70.0,
+                height: 70.0,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(width: 2.0, color: Colors.grey),
+                    borderRadius: BorderRadius.circular(35.0),
+                    image: DecorationImage(
+                        image: NetworkImage(link), fit: BoxFit.cover)),
+              ),
             ),
             SizedBox(
               height: 4.0,
