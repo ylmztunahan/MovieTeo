@@ -1,9 +1,27 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:vizeodevi/controlPage.dart';
 import 'package:vizeodevi/homepage.dart';
 import 'package:vizeodevi/newaccountpage.dart';
 
-class Loginpage extends StatelessWidget {
+class Loginpage extends StatefulWidget {
+  @override
+  _LoginpageState createState() => _LoginpageState();
+}
+
+class _LoginpageState extends State<Loginpage> {
+  final usernameCont=TextEditingController();
+
+  final passwordCont=TextEditingController();
+
+  void checkLogin(String username,String password)async{
+    var users=await Firestore.instance.collection("user").where("kullaniciAdi",isEqualTo: username).getDocuments();
+    users.documents.forEach((doc) { 
+      print(doc.data["kullaniciAdi"]);  
+      print(doc.data["sifre"]);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +98,9 @@ class Loginpage extends StatelessWidget {
                               height: 40.0,
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: TextField(),
+                                child: TextField(
+                                  controller: usernameCont,
+                                ),
                               ),
                             ),
                           ),
@@ -114,7 +134,9 @@ class Loginpage extends StatelessWidget {
                               height: 40.0,
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: TextField(),
+                                child: TextField(
+                                  controller: passwordCont,
+                                ),
                               ),
                             ),
                           ),
@@ -127,11 +149,9 @@ class Loginpage extends StatelessWidget {
                     //giriş butonu containerı//
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    ControlPage()));
+                        //print(usernameCont.text);
+                        //print(passwordCont.text);
+                        checkLogin(usernameCont.text, passwordCont.text);
                       },
                       child: Material(
                         elevation: 10.0,
